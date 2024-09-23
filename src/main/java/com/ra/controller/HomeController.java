@@ -10,4 +10,9 @@ public class HomeController {
         // trả về view
         return "home";
     }
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
+
 }

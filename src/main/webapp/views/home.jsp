@@ -12,5 +12,6 @@
 </head>
 <body>
     <h1>Trang chủ</h1>
+    <a href="/categories">Quản lý danh mục</a>
 </body>
 </html>
