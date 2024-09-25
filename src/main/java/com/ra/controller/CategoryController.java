@@ -19,4 +19,9 @@ public class CategoryController {
         model.addAttribute("categories",categories);
         return "list-category";
     }
+
+    @RequestMapping("/add-category")
+    public String add(){
+        return "add-category";
+    }
 }

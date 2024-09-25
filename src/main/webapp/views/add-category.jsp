@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: DELL
-  Date: 9/23/2024
-  Time: 8:15 PM
+  Date: 9/25/2024
+  Time: 7:11 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,27 +22,27 @@
 
 <div class="container">
     <div class="row">
-        <h1>Danh sách danh mục </h1>
-
-        <table class="table">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${categories}" var="category">
-                <tr>
-                    <td scope="row">${category.categoryId}</td>
-                    <td>${category.categoryName}</td>
-                    <td>${category.categoryStatus?'active':'inactive'}</td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <a href="/add-category" class="btn btn-success">Thêm mới</a>
+        <div class="col-lg-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Category Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="name">
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="status" value="1"> Active
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="status" value="0"> Inactive
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 <!-- Optional JavaScript -->
