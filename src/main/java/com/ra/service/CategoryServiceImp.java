@@ -20,6 +20,6 @@ public class CategoryServiceImp implements CategoryService{
 
     @Override
     public Boolean create(Category category) {
-        return null;
+        return categoryDAO.create(category);
     }
 }

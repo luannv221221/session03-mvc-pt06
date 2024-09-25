@@ -39,6 +39,26 @@ public class CategoryDAOImp implements CategoryDAO{
 
     @Override
     public Boolean create(Category category) {
-        return null;
+        Connection connection = null;
+
+        try {
+            // tạo đối tượng kết nối
+            connection = ConnectDB.open();
+            // Tạo đối tượng PreparedStatement
+            String sql = "insert into cagegories(name,status) value(?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            // set các giá trị của tham số trong sql của prepareStatement
+            statement.setString(1,category.getCategoryName());
+            statement.setBoolean(2,category.isCategoryStatus());
+            //thực thi câu truy vấn
+            statement.executeUpdate();
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            ConnectDB.close(connection);
+        }
+
+        return false;
     }
 }

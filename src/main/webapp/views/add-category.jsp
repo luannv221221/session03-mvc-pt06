@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
-            <form method="post">
+            <form method="post" action="">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Category Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="name">
